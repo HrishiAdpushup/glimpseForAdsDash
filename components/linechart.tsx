@@ -8,6 +8,7 @@ interface Datum {
 }
 
 interface Props {
+  className?: string;
   // Add any additional props you want to pass to the component
 }
 

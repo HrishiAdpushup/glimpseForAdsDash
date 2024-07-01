@@ -6,8 +6,9 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Authentication',
-  description: 'Authentication forms built using the components.'
+  title: 'Glimpse Login',
+  description: 'Glimpse for ads dashboard',
+  icons: ['./icon.png']
 };
 
 export default function AuthenticationPage() {
