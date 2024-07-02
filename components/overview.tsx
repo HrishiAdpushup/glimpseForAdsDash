@@ -4,52 +4,36 @@ import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
 const data = [
   {
-    name: 'Jan',
-    total: Math.floor(Math.random() * 5000) + 1000
+    name: '1',
+    total: Math.floor(Math.random() * 5) + 1
   },
   {
-    name: 'Feb',
-    total: Math.floor(Math.random() * 5000) + 1000
+    name: '2',
+    total: Math.floor(Math.random() * 5) + 1
   },
   {
-    name: 'Mar',
-    total: Math.floor(Math.random() * 5000) + 1000
+    name: '3',
+    total: Math.floor(Math.random() * 5) + 1
   },
   {
-    name: 'Apr',
-    total: Math.floor(Math.random() * 5000) + 1000
+    name: '4',
+    total: Math.floor(Math.random() * 5) + 1
   },
   {
-    name: 'May',
-    total: Math.floor(Math.random() * 5000) + 1000
+    name: '5',
+    total: Math.floor(Math.random() * 5) + 1
   },
   {
-    name: 'Jun',
-    total: Math.floor(Math.random() * 5000) + 1000
+    name: '6',
+    total: Math.floor(Math.random() * 5) + 1
   },
   {
-    name: 'Jul',
-    total: Math.floor(Math.random() * 5000) + 1000
+    name: '7',
+    total: Math.floor(Math.random() * 5) + 1
   },
   {
-    name: 'Aug',
-    total: Math.floor(Math.random() * 5000) + 1000
-  },
-  {
-    name: 'Sep',
-    total: Math.floor(Math.random() * 5000) + 1000
-  },
-  {
-    name: 'Oct',
-    total: Math.floor(Math.random() * 5000) + 1000
-  },
-  {
-    name: 'Nov',
-    total: Math.floor(Math.random() * 5000) + 1000
-  },
-  {
-    name: 'Dec',
-    total: Math.floor(Math.random() * 5000) + 1000
+    name: '8',
+    total: Math.floor(Math.random() * 5) + 1
   }
 ];
 
@@ -69,7 +53,7 @@ export function Overview() {
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `$${value}`}
+          tickFormatter={(value) => `${value}`}
         />
         <Bar dataKey="total" fill="#adfa1d" radius={[4, 4, 0, 0]} />
       </BarChart>

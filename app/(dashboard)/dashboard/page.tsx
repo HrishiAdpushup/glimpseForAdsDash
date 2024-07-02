@@ -2,6 +2,7 @@ import { CalendarDateRangePicker } from '@/components/date-range-picker';
 import { Button } from '@/components/ui/button';
 import RecentCampaigns from '@/components/recent-campaigns';
 import { ArrowDownIcon, ArrowUpIcon } from '@/components/arrowIcons';
+import { Overview } from '@/components/overview';
 import {
   Card,
   CardContent,
@@ -152,53 +153,52 @@ export default function page() {
             {/* Click Tracking Card */}
             <Card className="col-span-4 row-span-1">
               <CardHeader>
-                <CardTitle className="mb-2 text-2xl font-bold">
-                  Interactions
-                </CardTitle>
+                <div className="flex flex-col gap-2">
+                  <CardTitle className="text-4xl font-bold">
+                    Interactions
+                  </CardTitle>
+                  <CardDescription className="text-xl">
+                    Clicks and Conversions
+                  </CardDescription>
+                </div>
               </CardHeader>
-              <CardContent className="grid grid-cols-3 gap-8">
-                <div className="flex flex-col items-center">
-                  <span className="mb-2 text-4xl font-bold">9638</span>
-                  <span className="text-lg text-muted-foreground">Clicks</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="mb-2 text-4xl font-bold">6948</span>
-                  <span className="text-lg text-muted-foreground">Hovers</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="mb-2 text-4xl font-bold">78%</span>
-                  <span className="text-lg text-muted-foreground">CTR</span>
+              <CardContent className="grid gap-6">
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="space-y-2">
+                    <div className="text-sm font-medium text-muted-foreground">
+                      Clicks
+                    </div>
+                    <div className="text-4xl font-semibold">9638</div>
+                    <div className="flex items-center gap-2 text-sm text-green-500">
+                      <ArrowUpIcon className="h-4 w-4" />
+                      <span>+32.5%</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="text-sm font-medium text-muted-foreground">
+                      Hovers
+                    </div>
+                    <div className="text-4xl font-semibold">2358</div>
+                    <div className="flex items-center gap-2 text-sm text-red-500">
+                      <ArrowDownIcon className="h-4 w-4" />
+                      <span>+13.2%</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="text-sm font-medium text-muted-foreground">
+                      CTR
+                    </div>
+                    <div className="text-4xl font-semibold">23%</div>
+                    <div className="flex items-center gap-2 text-sm text-red-500">
+                      <ArrowDownIcon className="h-4 w-4" />
+                      <span>+10.6%</span>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
-            {/* Revenue Card */}
-            <Card className=" col-span-4 row-span-1 hidden md:block">
-              <CardHeader>
-                <CardTitle className="mb-2 text-2xl font-bold">
-                  Revenue
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="grid grid-cols-3 gap-8">
-                <div className="flex flex-col items-center">
-                  <span className="mb-2 text-4xl font-bold">$5,67</span>
-                  <span className="text-lg text-muted-foreground">Daily</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="mb-2 text-4xl font-bold">$35,67</span>
-                  <span className="text-lg text-muted-foreground">Weekly</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="mb-2 text-4xl font-bold">$145,67</span>
-                  <span className="text-lg text-muted-foreground">Monthly</span>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Third Row */}
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-8">
-            {/* Glimpse Stats Overview */}
-            <Card className="col-span-3">
+            {/* Glimpse CTR Card */}
+            <Card className="col-span-4 row-span-1">
               <CardHeader>
                 <div className="flex flex-col gap-2">
                   <CardTitle className="text-4xl font-bold">
@@ -210,7 +210,7 @@ export default function page() {
                 </div>
               </CardHeader>
               <CardContent className="grid gap-6">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-3 gap-4">
                   <div className="space-y-2">
                     <div className="text-sm font-medium text-muted-foreground">
                       Glimpse Clicks
@@ -241,27 +241,33 @@ export default function page() {
                       <span>+2.6%</span>
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <div className="text-sm font-medium text-muted-foreground">
-                      Glimpse Revenue
-                    </div>
-                    <div className="text-4xl font-semibold">278$</div>
-                    <div className="flex items-center gap-2 text-sm text-red-500">
-                      <ArrowDownIcon className="h-4 w-4" />
-                      <span>+1.23%</span>
-                    </div>
-                  </div>
                 </div>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Third Row */}
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-8">
             {/* Campaigns */}
-            <Card className="col-span-4 row-span-2 md:col-span-5">
+            <Card className="col-span-4 md:col-span-5">
               <CardHeader>
                 <CardTitle>Campaigns</CardTitle>
                 <CardDescription>Your recent top campaigns.</CardDescription>
               </CardHeader>
               <CardContent>
                 <RecentCampaigns />
+              </CardContent>
+            </Card>
+            {/* Glimpse Stats Overview */}
+            <Card className="col-span-3">
+              <CardHeader>
+                <CardTitle>Campaign Performance</CardTitle>
+                <CardDescription>
+                  Performance overview of recent campaigns
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Overview />
               </CardContent>
             </Card>
           </div>

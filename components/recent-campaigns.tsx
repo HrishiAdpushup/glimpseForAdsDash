@@ -58,7 +58,7 @@ const campaignsData: CampaignData[] = [
   },
   {
     customer: 'Engagement Y',
-    status: 'Optimizing',
+    status: 'Completed',
     ctr: '62%',
     glimpseClicks: 247,
     glimpseCtr: '41%',
@@ -73,6 +73,24 @@ const campaignsData: CampaignData[] = [
     glimpseCtr: '13%',
     conversions: 321,
     conversionsPerClick: 6
+  },
+  {
+    customer: 'New Campaign',
+    status: 'Completed',
+    ctr: '45%',
+    glimpseClicks: 237,
+    glimpseCtr: '41%',
+    conversions: 2684,
+    conversionsPerClick: 12
+  },
+  {
+    customer: 'Engagement U',
+    status: 'Archived',
+    ctr: '65%',
+    glimpseClicks: 3447,
+    glimpseCtr: '45%',
+    conversions: 2684,
+    conversionsPerClick: 122
   }
   // Add more campaign data objects here
 ];
